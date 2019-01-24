@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	<title>Resultados do formulário: {{title}}</title>
+{% endblock %}
+
+{% block content %}
+	<h1 style="text-align: center"><font size="6" color="#3d3d3d">Resultados do formulário: {{title}}</font></h1>
+	<p>Quantidade de pessoas que responderam o questionário: {{count}}</p>
+	<table>
+		<tr>
+		<th>Questões</th>
+			{% for queue in question %}
+				<td width = "300">{{queue.question}}</td>
+			{% endfor %}
+		</tr>
+		<tr>
+		<th>Respostas mais utilizadas</th>
+			{% for instance in result %}
+				<td width = "300"> {{instance}}</td>
+			{% endfor %}
+		</tr>
+	</table>
+{% endblock %}
